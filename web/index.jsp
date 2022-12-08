@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>MyStore</title>
   </head>
   <body>
-  $END$
+  <jsp:forward page="/client/index.jsp"></jsp:forward>
   </body>
 </html>
