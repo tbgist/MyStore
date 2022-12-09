@@ -12,6 +12,7 @@
 - commons-logging-1.2.jar
 - jstl-1.2.jar
 - mail.jar
+- activation.jar
 - mchange-commons-java-0.2.9.jar
 - mysql-connector-java-8.0.30.jar
 
@@ -28,7 +29,7 @@ Filter有四种拦截方式：REQUEST, INCLUDE, FORWARD, ERROR;
 
 ## 2. 首页
 具体代码查看：
-- /web/client/: head.jsp, foot.jsp, menu_search.jsp, index.jsp。
+- /web/client/: head.jsp, foot.jsp, menu_search.jsp, menu_search.jsp
 - /web/client/js/: autoplay.js, form.js
 
 jsp运行原理：访问jsp文件->生成java源文件->生成字节码文件->调用Servlet->销毁。
@@ -41,6 +42,36 @@ jsp参考：https://www.runoob.com/jsp/jsp-tutorial.html
 
 ## 3. 账号管理模块
 ### 3.1. 用户注册
+用户：src/src/cn.mystore.domain.User.java
+
+JDBC：一套用于执行sql的Java API。
+
+JDBC使用流程：DriverManager(加载驱动&创建Connection)->Connection(获取Statement对象)->PreparedStatment(执行sql语句&获取ResultSet)->释放资源
+
+用户注册界面：src/web/client/register.jsp
+
+数据库相关配置：c3p0-config.xml
+
+RegisterServlet用于处理用户注册请求，使用c3p0数据库连接池将表单信息提交到数据库，数据库中创建用户表如下：
+
+```sqk
+create table user(
+    id int(11) not null primary key,  # 用户id
+    username varchar(20) not null,  # 用户名
+    password varchar(20) not null,  # 密码
+    gender varchar(2),  # 性别
+    email varchar(50),  # 邮箱
+    telephone varchar(20),  # 电话号码
+    introduce varchar(100),  # 简介
+    activeCode varchar(50),  # 激活码
+    state int(11) default 0,  # 激活状态
+    role varchar(10) default "普通用户",  # 用户角色
+    registTime timestamp not null  # 注册时间
+);
+```
+
+邮件使用163邮箱，注意密码部分填写的是授权码。
+
 ### 3.2. 用户登录
 
 

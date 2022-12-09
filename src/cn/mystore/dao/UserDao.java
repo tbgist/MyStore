@@ -8,9 +8,9 @@ import cn.mystore.utils.DataSourceUtils;
 public class UserDao {
 	// 添加用户
 	public void addUser(User user) throws SQLException {
-		String sql = "insert into user(username,password,gender,email,telephone,introduce,activecode) values(?,?,?,?,?,?,?)";
+		String sql = "insert into user(id,username,password,gender,email,telephone,introduce,activeCode) values(?,?,?,?,?,?,?,?)";
 		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
-		int row = runner.update(sql, user.getUsername(), user.getPassword(),
+		int row = runner.update(sql,user.getId(), user.getUsername(), user.getPassword(),
 				user.getGender(), user.getEmail(), user.getTelephone(),
 				user.getIntroduce(), user.getActiveCode());
 		if (row == 0) {
