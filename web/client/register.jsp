@@ -3,7 +3,7 @@
 <html>
 <head>
 
-    <title>传智书城注册页面</title>
+    <title>沃德商店注册页面</title>
     <%--导入css和js --%>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/client/css/main.css" type="text/css"/>
     <script type="text/javascript" src="${pageContext.request.contextPath}/client/js/form.js"></script>
@@ -17,12 +17,12 @@
 </head>
 
 <body class="main">
-<!-- 1.网上书城顶部 start -->
+<!-- 1.顶部 start -->
 <%@include file="head.jsp"%>
-<!-- 网上书城顶部  end -->
-<!--2. 网上书城菜单列表  start -->
+<!-- 顶部  end -->
+<!--2. 菜单列表  start -->
 <%@include file="menu_search.jsp" %>
-<!-- 网上书城菜单列表  end -->
+<!-- 菜单列表  end -->
 <!-- 3.网上书城用户注册  start -->
 <div id="divcontent">
     <form action="${pageContext.request.contextPath}/register" method="post" onsubmit="return checkForm();">
@@ -114,9 +114,9 @@
     </form>
 </div>
 
-<!-- 网上书城用户注册  end -->
-<!--4. 网上书城下方显示 start -->
+<!-- 用户注册  end -->
+<!--4. 下方显示 start -->
 <%@ include file="foot.jsp" %>
-<!-- 网上书城下方显示 start -->
+<!-- 下方显示 start -->
 </body>
 </html>

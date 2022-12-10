@@ -30,7 +30,7 @@
         	</ul>
     	</div>
 	</div>
-	<!-- 图书商场首页轮播图  end -->	
+	<!-- 商场首页轮播图  end -->
 	<div id="divcontent">
 		<table width="900px" border="0" cellspacing="0">
 			<tr>
